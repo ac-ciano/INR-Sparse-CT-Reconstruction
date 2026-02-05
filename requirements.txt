@@ -1,0 +1,40 @@
+# Core dependencies - versions used in experiments (conda env: onc_lung_inr)
+# Python 3.10.19
+
+# Deep Learning
+torch==2.5.1
+torchvision==0.20.1
+torchaudio==2.5.1
+
+# Numerical & Scientific Computing
+numpy==2.2.6
+scipy==1.15.2
+pandas==2.3.3
+
+# Image Processing
+scikit-image==0.25.2
+scikit-learn==1.7.2
+Pillow==10.4.0
+
+# Medical Imaging
+pydicom==3.0.1
+pylidc==0.2.3
+SimpleITK==2.5.3
+tcia-utils==3.2.1
+
+# Visualization
+matplotlib==3.10.1
+pyvista==0.46.4
+plotly==6.5.1
+
+# Development Tools
+jupyterlab==4.5.2
+ipywidgets==8.1.8
+tqdm==4.67.1
+
+# Testing
+pytest==9.0.2
+pytest-cov==7.0.0
+
+# Note: For GPU support, install PyTorch with CUDA 12.1:
+# pip install torch==2.5.1 torchvision==0.20.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cu121

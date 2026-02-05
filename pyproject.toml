@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tumour-tomography"
+version = "1.0.0"
+description = "Implicit Neural Representations for Sparse CT Reconstruction of Pulmonary Nodules"
+readme = "README.md"
+requires-python = ">=3.10,<3.11"
+license = { text = "MIT" }
+dynamic = ["dependencies"]
+authors = [
+    { name = "Alessandro Costanzo Ciano", email = "alessandrociano02@gmail.com" }
+]
+keywords = ["deep-learning", "medical-imaging", "ct-reconstruction", "implicit-neural-representations", "siren", "pytorch"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.10",
+    "Topic :: Scientific/Engineering :: Medical Science.",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence"
+]
+
+[tool.setuptools]
+packages = ["tumour_tomography"]
+
+[tool.setuptools.dynamic]
+dependencies = { file = ["requirements.txt"] }

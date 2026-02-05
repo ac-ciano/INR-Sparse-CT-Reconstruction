@@ -1,0 +1,53 @@
+name: onc_lung_inr
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10.19
+  
+  # Deep Learning
+  - pytorch=2.5.1
+  - pytorch-cuda=12.1
+  
+  # Numerical & Scientific Computing
+  - numpy=2.2.6
+  - scipy=1.15.2
+  - pandas=2.3.3
+  
+  # Image Processing & Machine Learning
+  - scikit-image=0.25.2
+  - scikit-learn=1.7.2
+  - pillow=10.4.0
+  
+  # Medical Imaging
+  - pydicom=3.0.1
+  - simpleitk=2.5.3
+  
+  # Visualization
+  - matplotlib=3.10.1
+  - pyvista=0.46.4
+  
+  # Development & Notebooks
+  - jupyterlab=4.5.2
+  - ipywidgets=8.1.8
+  - tqdm=4.67.1
+  
+  # Testing
+  - pip
+  - pip:
+      # Medical imaging libraries (not available in conda)
+      - pylidc==0.2.3
+      - tcia-utils==3.2.1
+      
+      # PyTorch extensions (installed from PyPI for compatibility)
+      - torchvision==0.20.1
+      - torchaudio==2.5.1
+      
+      # Visualization
+      - plotly==6.5.1
+      
+      # Testing
+      - pytest==9.0.2
+      - pytest-cov==7.0.0

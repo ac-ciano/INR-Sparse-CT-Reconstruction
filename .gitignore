@@ -1,0 +1,40 @@
+# Data directories
+data/
+
+# Generated outputs (recreate via scripts)
+logs/
+models/
+
+# Report
+report/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Coverage
+.coverage
+htmlcov/
+
+# Data files
+*.npy
+*.pth
+*.csv
+*.dcm
+*.json
