@@ -19,7 +19,6 @@
 - [Installation](#installation)
 - [Repository Structure](#repository-structure)
 - [Usage](#usage)
-- [Experimental Pipeline](#experimental-pipeline)
 - [Results & Discussion](#results--discussion)
 - [Technical Implementation](#technical-implementation)
 - [Limitations & Future Work](#limitations--future-work)
@@ -666,50 +665,6 @@ python scripts/frequency_analysis_intra_tumour.py
 
 All figures are saved as PDF files in the working directory. CSV results are saved to `logs/`.
 
----
-
-## Experimental Pipeline
-
-```mermaid
-flowchart TB
-    subgraph DataPrep [Data Preparation]
-        A[LIDC-IDRI Dataset] --> B[extract_nodules.py]
-        B --> C[High-Res Volumes]
-        C --> D[1-in-5 Sparse Sampling]
-    end
-    
-    subgraph Reconstruction [Reconstruction Methods]
-        D --> E1[SIREN_train_nodule.py]
-        D --> E2[interpolation_run.py]
-        D --> E3[propagate_mask.py]
-        E1 --> F1[SIREN Volumes]
-        E2 --> F2[Interpolated Volumes]
-        E3 --> F3[Propagated Masks]
-    end
-    
-    subgraph Evaluation [Main Evaluation Scripts]
-        F1 --> G1[evaluate_full_volume_radiometrics.py]
-        F2 --> G1
-        F1 --> G2[evaluate_intra_tumour_radiometrics.py]
-        F2 --> G2
-        F1 --> G3[geometric_analysis_voxel_expansion.py]
-        F2 --> G3
-        F3 --> G4[propagate_simple_gen-eval.py]
-        F1 --> G5[frequency_analysis_intra_tumour.py]
-        F2 --> G5
-        F1 --> G6[frequency_analysis_full_volume.py]
-        F2 --> G6
-    end
-    
-    subgraph Outputs [Final Report Outputs]
-        G1 --> H1[Table 1: Global Metrics]
-        G2 --> H2[Table 1: Local Metrics]
-        G3 --> H3[Figure 3: Geometric Analysis]
-        G4 --> H4[Morphological Baseline Stats]
-        G5 --> H5[Figure 5: Frequency Analysis]
-        G6 --> H6[Table 2: Texture Statistics]
-    end
-```
 
 ---
 
